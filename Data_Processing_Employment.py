@@ -251,4 +251,12 @@ else:
 # ===================== #
 # === Full Cleasing === #
 # ===================== #
-del
+
+#[f for f in dir() if f.startswith(pattern)]         # List of variables
+
+for pattern in {'df', 'data', 'caged'}:
+    for var in list(globals().keys()):
+        if var.startswith(pattern):
+            del globals()[var]
+    
+del base_period, c, file, folder_files_caged, group_cols, keys, kind, path, pattern, rais_database, state_municipalities, var, writer
